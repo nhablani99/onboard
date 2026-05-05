@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,7 +42,10 @@ export default function Navbar() {
             AI features
           </a>
           <a href="#pricing" className="hover:text-black transition-colors">Pricing</a>
-          <a href="#" className="hover:text-black transition-colors">Docs</a>
+          <Link href="/chat" className="hover:text-black transition-colors flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse inline-block"></span>
+            OnBoard Chat
+          </Link>
         </nav>
 
         {/* CTAs */}

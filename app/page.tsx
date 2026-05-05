@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import LogoStrip from "@/components/LogoStrip";
@@ -11,6 +13,19 @@ import Pricing from "@/components/Pricing";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  const [authed, setAuthed] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (localStorage.getItem("onboard_auth") === "true") {
+      setAuthed(true);
+    } else {
+      router.replace("/login");
+    }
+  }, [router]);
+
+  if (!authed) return null;
+
   return (
     <main className="min-h-screen">
       <Navbar />

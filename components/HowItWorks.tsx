@@ -40,16 +40,10 @@ export default function HowItWorks() {
           <p className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#999] mb-3">
             How it works
           </p>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <h2 className="text-[42px] md:text-[52px] font-bold leading-[1.1] text-[#111] max-w-lg">
-              From offer accepted<br />
-              to <span className="font-display italic font-normal">fully set up.</span>
-            </h2>
-            <p className="text-[15px] text-[#666] max-w-sm">
-              What used to take HR and IT a week of back-and-forth now happens
-              in under five minutes.
-            </p>
-          </div>
+          <h2 className="text-[42px] md:text-[52px] font-bold leading-[1.1] text-[#111] max-w-lg">
+            From offer accepted<br />
+            to <span className="font-display italic font-normal">fully set up.</span>
+          </h2>
         </div>
 
         {/* Steps grid */}
@@ -82,41 +76,6 @@ export default function HowItWorks() {
               <p className="text-[13.5px] text-[#555] leading-relaxed flex-1">
                 {step.desc}
               </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Timeline bar */}
-        <div className="mt-8 bg-white rounded-2xl border border-[#ebebeb] p-5 flex items-center gap-4 overflow-x-auto no-scrollbar">
-          <span className="text-[12px] font-medium text-[#999] whitespace-nowrap flex-shrink-0">
-            Timeline
-          </span>
-          {[
-            { label: "Offer accepted", time: "Day −7", active: false },
-            { label: "Invite sent", time: "Day −7", active: false },
-            { label: "Tools mapped", time: "Day −7 +1min", active: false },
-            { label: "Access provisioned", time: "Day −7 +3min", active: false },
-            { label: "New hire onboarded", time: "Day 1", active: true },
-          ].map((item, i, arr) => (
-            <div key={i} className="flex items-center gap-4 flex-shrink-0">
-              <div className="flex flex-col items-center gap-1">
-                <div
-                  className={`w-3 h-3 rounded-full border-2 ${
-                    item.active
-                      ? "bg-[#22C55E] border-[#22C55E]"
-                      : "bg-white border-[#ccc]"
-                  }`}
-                />
-                <span className="text-[11px] font-medium text-[#111] whitespace-nowrap">
-                  {item.label}
-                </span>
-                <span className="text-[10px] text-[#999] whitespace-nowrap">
-                  {item.time}
-                </span>
-              </div>
-              {i < arr.length - 1 && (
-                <div className="w-12 h-[1px] bg-[#ddd] flex-shrink-0 mb-5" />
-              )}
             </div>
           ))}
         </div>
